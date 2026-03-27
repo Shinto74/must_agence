@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "tag": "Pôle Entreprise",
+    "title_line1": "Corporate &",
+    "title_accent": "Business",
+    "description": "Marketing d'influence, growth hacking, social media et production de contenu premium. Approche 100% ROIste et data-driven pour des résultats mesurables et une croissance durable.",
+    "cta_primary": "Démarrer mon projet",
+    "cta_secondary": "Nos services"
+  },
+  "marquee_words": ["Influence", "Social Media", "SEO", "Google Ads", "Branding", "Photo", "Vidéo", "E-Réputation", "UI/UX", "Growth"],
+  "expertise": [
+    {
+      "number": "01",
+      "title": "Influence Marketing",
+      "text": "Campagnes d'influence end-to-end. Sélection de créateurs, brief créatif, production et suivi des KPIs. On connecte votre marque aux bonnes audiences."
+    },
+    {
+      "number": "02",
+      "title": "Growth Hacking",
+      "text": "Testing, itération et optimisation de vos funnels d'acquisition. SEO, SEA, Social Ads — on maximise le retour sur chaque investissement."
+    },
+    {
+      "number": "03",
+      "title": "Brand Identity",
+      "text": "Positionnement, messaging et identité visuelle pour l'ère digitale. On crée des marques qui résonnent et convertissent."
+    }
+  ],
+  "services": [
+    {
+      "number": "01",
+      "title": "Influencer Marketing",
+      "description": "Campagnes d'influence end-to-end pour marques. Sélection de créateurs, brief, production UGC et suivi des performances sur TikTok, Instagram et YouTube.",
+      "chips": ["Campagnes Influence", "Creator Selection", "UGC Strategy", "Performance Tracking"]
+    },
+    {
+      "number": "02",
+      "title": "Social Media Management",
+      "description": "Community management expert et gestion d'image de marque. Présence cohérente, engageante et stratégique sur tous les réseaux sociaux.",
+      "chips": ["Community Management", "Planning Éditorial", "Gestion d'Image", "Modération"]
+    },
+    {
+      "number": "03",
+      "title": "Production de Contenu",
+      "description": "Photographes et vidéastes mobiles, déplacement sur site. Contenu lifestyle, institutionnel et brand content premium pour raconter votre histoire.",
+      "chips": ["Photo Sur Site", "Vidéo Corporate", "Lifestyle", "Brand Content"]
+    },
+    {
+      "number": "04",
+      "title": "Growth Marketing",
+      "description": "SEO, Google Ads et Social Ads. Stratégie d'acquisition complète, optimisation de funnels et conversion. Chaque euro tracké et optimisé pour le ROI max.",
+      "chips": ["SEO", "Google Ads", "Social Ads", "Conversion Funnels"]
+    },
+    {
+      "number": "05",
+      "title": "Branding & Design",
+      "description": "Logos, chartes graphiques complètes et interfaces UI/UX. On crée des identités visuelles qui marquent les esprits et génèrent de la confiance.",
+      "chips": ["Logo", "Charte Graphique", "UI/UX Design", "Identité Visuelle"]
+    },
+    {
+      "number": "06",
+      "title": "E-Réputation",
+      "description": "Protégez et renforcez votre image digitale. Gestion proactive des avis, veille concurrentielle et stratégie de présence en ligne irréprochable.",
+      "chips": ["Gestion Avis", "Image Digitale", "Veille", "Réputation Online"]
+    }
+  ],
+  "process": [
+    { "number": "01", "title": "Audit Digital", "text": "Analyse complète de votre présence, concurrents et opportunités marché." },
+    { "number": "02", "title": "Stratégie Data-Driven", "text": "Plan chiffré, objectifs SMART, KPIs clairs et budgets optimisés." },
+    { "number": "03", "title": "Déploiement", "text": "Lancement campagnes, production contenu, activation de tous les canaux." },
+    { "number": "04", "title": "Reporting & Scale", "text": "Dashboards temps réel, optimisation continue et stratégie de scale." }
+  ],
+  "cta": {
+    "title": "Prêt à accélérer votre croissance ?",
+    "subtitle": "On transforme votre budget en machine à résultats.",
+    "button": "Lancer mon projet"
+  },
+  "contact": {
+    "title_line1": "Parlons",
+    "title_line2": "business.",
+    "heading": "Votre marque mérite<br>de la performance.",
+    "text": "Décrivez vos objectifs. On revient avec une stratégie sur mesure en 24h.",
+    "email": "business@mustagence.com",
+    "form_options": ["Influencer Marketing", "Social Media", "Production Contenu", "Growth / SEO / Ads", "Branding & Design", "E-Réputation"]
+  }
+}

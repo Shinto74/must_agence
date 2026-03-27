@@ -1,0 +1,151 @@
+---
+layout: base.njk
+permalink: /
+meta_title: "Must Agence — Influence Agency"
+meta_description: "Agence d'influence spécialisée musique et marques. Campagnes TikTok, stratégie sociale et développement artiste."
+---
+
+{# ═══ PAGE: HOME ═══ #}
+<div class="pg act" id="pg-home">
+
+{# HERO #}
+<section class="hero" data-cms-edit="site.hero">
+  <div class="hbg"><div class="hgr"></div><div class="horb a"></div><div class="horb b"></div></div>
+  <div class="hin">
+    <div class="hlb">{{ site.hero.label }}</div>
+    <h1 class="hh1">{{ site.hero.title_line1 }}<br><span class="n">{{ site.hero.title_accent }}</span></h1>
+    <p class="hp">{{ site.hero.subtitle | safe }}</p>
+    <div class="hbt">
+      <a class="btn bn" onclick="goSec('contact');return false" href="#">{{ site.hero.cta_primary }}</a>
+      <a class="btn bg" onclick="goSec('poles');return false" href="#">{{ site.hero.cta_secondary }}</a>
+    </div>
+  </div>
+  <div class="hsc"><span>Scroll</span><div class="scb"></div></div>
+</section>
+
+{# MARQUEE #}
+<div class="mq"><div class="mqt">
+  {%- for w in site.marquee_words %}<span>{{ w }}</span>{%- endfor %}
+  {%- for w in site.marquee_words %}<span>{{ w }}</span>{%- endfor %}
+</div></div>
+
+{# HOME STATS #}
+<section style="padding-top:0;padding-bottom:80px">
+  <div class="ctn">
+    {% set items = stats.home %}{% set accent_color = "var(--neon)" %}
+    {% include "components/stats.njk" %}
+  </div>
+</section>
+
+{# POLES GATEWAY #}
+<section id="poles">
+  <div class="ctn">
+    <div class="rv"><div class="sl-t">Nos univers</div><h2 class="sh">Deux pôles.<br>Un objectif.</h2><p class="ss">Artiste ou marque, on a l'approche taillée pour vous.</p></div>
+    <div class="pcg">
+      {# Artiste card #}
+      <div class="pc rv d1" onclick="goPage('artiste')" data-cms-edit="site.poles.artiste">
+        <img src="{{ site.logo_white }}" alt="" class="pl">
+        <div class="pt2">{{ site.poles.artiste.tag }}</div>
+        <h3>{{ site.poles.artiste.title }}</h3>
+        <p>{{ site.poles.artiste.description }}</p>
+        <div class="pch">{%- for c in site.poles.artiste.chips %}<span>{{ c }}</span>{%- endfor %}</div>
+        <div class="plk">Découvrir <span>→</span></div>
+      </div>
+      {# Entreprise card #}
+      <div class="pc ent rv d2" onclick="goPage('entreprise')" data-cms-edit="site.poles.entreprise">
+        <img src="{{ site.logo_green }}" alt="" class="pl">
+        <div class="pt2">{{ site.poles.entreprise.tag }}</div>
+        <h3>{{ site.poles.entreprise.title }}</h3>
+        <p>{{ site.poles.entreprise.description }}</p>
+        <div class="pch">{%- for c in site.poles.entreprise.chips %}<span>{{ c }}</span>{%- endfor %}</div>
+        <div class="plk">Découvrir <span>→</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# VISION #}
+<section style="background:var(--sf)" data-cms-edit="site.vision">
+  <div class="ctn">
+    <div class="rv"><div class="sl-t">{{ site.vision.label }}</div><h2 class="sh">{{ site.vision.title_line1 }}<br>{{ site.vision.title_line2 }}</h2></div>
+    <div class="visg">
+      <div class="vist rv d1">
+        <blockquote>{{ site.vision.quote }}</blockquote>
+        <p>{{ site.vision.text }}</p>
+      </div>
+      <div class="visv rv d2"><img src="{{ site.logo_green }}" alt=""></div>
+    </div>
+  </div>
+</section>
+
+{# TEAM #}
+<section id="equipe">
+  <div class="ctn">
+    <div class="rv"><div class="sl-t">L'équipe</div><h2 class="sh">Les cerveaux derrière<br>la machine.</h2><p class="ss">Experts passionnés, humains engagés.</p></div>
+    <div class="tmg">
+      {%- for member in team %}
+        {%- set delay_class = "d" + (loop.index) if loop.index <= 4 else "" %}
+        {% include "components/team-card.njk" %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# PORTFOLIO #}
+<section id="portfolio" style="background:var(--sf)">
+  <div class="ctn">
+    <div class="rv"><div class="sl-t">Portfolio</div><h2 class="sh">Les chiffres<br>ne mentent pas.</h2><p class="ss">Campagnes, résultats, impact.</p></div>
+  </div>
+  <div class="clw"><div class="clt">
+    {%- for c in site.clients %}<span>{{ c }}</span>{%- endfor %}
+    {%- for c in site.clients %}<span>{{ c }}</span>{%- endfor %}
+  </div></div>
+  <div class="ctn"><div class="csg">
+    {%- for cs in site.cases %}
+    <div class="cc rv {% if loop.index > 1 %}d{{ loop.index - 1 }}{% endif %}" data-cms-edit="site.cases[{{ loop.index0 }}]">
+      <div class="ccth">{{ cs.icon }}</div>
+      <div class="ccb">
+        <div class="cctg" style="color:var(--neon)">{{ cs.tag }}</div>
+        <h3>{{ cs.title }}</h3>
+        <p>{{ cs.description }}</p>
+        <div class="ccm">
+          {%- for m in cs.metrics %}
+          <div class="m"><span class="mv" style="color:var(--neon)">{{ m.value }}</span><span class="ml">{{ m.label }}</span></div>
+          {%- endfor %}
+        </div>
+      </div>
+    </div>
+    {%- endfor %}
+  </div></div>
+</section>
+
+{# CTA BAND #}
+<div class="ctab rv" data-cms-edit="site.cta_band">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,var(--ng),transparent 70%);opacity:.4"></div>
+  <h2 style="position:relative">{{ site.cta_band.title | safe }}</h2>
+  <p style="position:relative">{{ site.cta_band.subtitle }}</p>
+  <a class="btn bn" style="position:relative" onclick="goSec('contact');return false" href="#">{{ site.cta_band.button }}</a>
+</div>
+
+{# CONTACT #}
+<section id="contact">
+  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,var(--ng),transparent 70%);filter:blur(100px);opacity:.25;pointer-events:none"></div>
+  <div class="ctn">
+    {% set contact_data = site.contact %}
+    {% set form_options = site.contact.form_fields | selectattr("type", "equalto", "select") | first %}
+    {% set form_options = ["Pôle Artiste / Musique", "Pôle Corporate / Marque", "Autre"] %}
+    {% include "components/contact-form.njk" %}
+  </div>
+</section>
+
+</div>
+
+{# ═══ PAGE: ARTISTE ═══ #}
+<div class="pg" id="pg-artiste">
+  {% include "page-artiste-content.njk" %}
+</div>
+
+{# ═══ PAGE: ENTREPRISE ═══ #}
+<div class="pg ent-pg" id="pg-entreprise">
+  {% include "page-entreprise-content.njk" %}
+</div>

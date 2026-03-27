@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "tag": "Pôle Artiste",
+    "title_line1": "Music &",
+    "title_accent": "Entertainment",
+    "description": "Campagnes d'influence TikTok, activation de créateurs, stratégie de lancement et développement de carrière artistique. Un accompagnement clé en main pour transformer votre talent en marque.",
+    "cta_primary": "Démarrer mon projet",
+    "cta_secondary": "Nos services"
+  },
+  "marquee_words": ["TikTok", "Influence", "Clips", "Pochettes", "Sound Seeding", "RP", "Booking", "Storytelling", "Rollout", "Viral"],
+  "expertise": [
+    {
+      "number": "01",
+      "title": "Viral Engineering",
+      "text": "L'algorithme n'est pas une loterie, c'est une science. On capture l'attention là où elle est la plus chère. On ne cherche pas juste des vues, on crée de l'obsession."
+    },
+    {
+      "number": "02",
+      "title": "Icon Architecture",
+      "text": "On ne gère pas des carrières, on bâtit des dynasties. Branding, direction artistique, positionnement : on transforme des personnalités en actifs intouchables."
+    },
+    {
+      "number": "03",
+      "title": "Monetization",
+      "text": "La hype sans revenus ne sert à rien. On convertit l'influence en business model pérenne. Funnels, produits, partenariats : on maximise chaque pixel."
+    }
+  ],
+  "services": [
+    {
+      "number": "01",
+      "title": "Influence & TikTok Activation",
+      "description": "Campagnes d'influence sur-mesure avec notre réseau exclusif de créateurs TikTok, Instagram Reels et YouTube Shorts. On seed votre son, on crée le buzz organique, on génère les vues qui comptent.",
+      "chips": ["TikTok Activation", "Creator Network", "Sound Seeding", "Viral Engineering"]
+    },
+    {
+      "number": "02",
+      "title": "Création Visuelle",
+      "description": "Pochettes d'album, clips musicaux, visuels Instagram et contenus TikTok. Direction artistique complète pour une identité visuelle qui marque les esprits.",
+      "chips": ["Pochettes", "Clips", "Direction Artistique", "Contenus Viraux"]
+    },
+    {
+      "number": "03",
+      "title": "Stratégie de Lancement",
+      "description": "Chaque sortie est un événement. Teasing multi-plateforme, rollout marketing calibré, montée en puissance et suivi post-sortie. Singles ou albums, on orchestre l'impact.",
+      "chips": ["Rollout Marketing", "Teasing", "Planification", "Data & Analytics"]
+    },
+    {
+      "number": "04",
+      "title": "Campagnes Ads & RP",
+      "description": "Ads haute performance sur Meta, Google, TikTok et Snapchat. Chaque euro investi est tracké et optimisé. Relations presse pour amplifier la portée médiatique.",
+      "chips": ["Meta Ads", "Google Ads", "TikTok Ads", "Relations Presse"]
+    },
+    {
+      "number": "05",
+      "title": "Brand Content & Storytelling",
+      "description": "Construire une image iconique, raconter une histoire authentique. Stratégie de contenu, identité d'artiste et construction de marque long terme.",
+      "chips": ["Storytelling", "Identité Artiste", "Content Strategy", "Trend ID"]
+    },
+    {
+      "number": "06",
+      "title": "Booking & Partenariats",
+      "description": "On connecte les artistes aux marques. Collaborations stratégiques, placements produits, événements et opportunités business pour monétiser l'influence.",
+      "chips": ["Collabs Marques", "Partenariats", "Events", "Live Promotion"]
+    }
+  ],
+  "process": [
+    { "number": "01", "title": "Brief & Audit", "text": "Analyse de votre univers, audience, objectifs et potentiel viral." },
+    { "number": "02", "title": "Stratégie", "text": "Plan sur mesure, sélection créateurs, budgets et KPIs." },
+    { "number": "03", "title": "Activation", "text": "Lancement campagnes, seeding, production et diffusion." },
+    { "number": "04", "title": "Reporting", "text": "Analytics temps réel, Shazam lifts, streaming impact." }
+  ],
+  "cta": {
+    "title": "Prêt à lancer votre <span style=\"color:var(--neon)\">prochaine sortie</span> ?",
+    "subtitle": "On s'occupe de l'influence. Vous, de la musique.",
+    "button": "Lancer mon projet"
+  },
+  "contact": {
+    "title_line1": "Parlons de",
+    "title_line2": "votre musique.",
+    "heading": "Votre talent mérite<br>une <span style=\"color:var(--neon)\">stratégie</span>.",
+    "text": "Single, album, clip, campagne TikTok ou repositionnement — décrivez votre projet. On revient vers vous en 24h.",
+    "email": "artiste@mustagence.com",
+    "form_options": ["Campagne TikTok / Influence", "Lancement single/album", "Clip musical", "Branding complet", "Autre"]
+  }
+}

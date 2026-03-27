@@ -1,0 +1,11 @@
+{# Team member card — expects: member (object), delay_class (string) #}
+<div class="tm rv {{ delay_class }}" data-cms-edit="team[{{ loop.index0 }}]">
+  <div class="tma">
+    <div class="ini">{{ member.initials }}</div>
+    <div class="tmo"><p>{{ member.bio }}</p></div>
+  </div>
+  <div class="tmi">
+    <h4>{{ member.name }}</h4>
+    <span>{{ member.role }}</span>
+  </div>
+</div>

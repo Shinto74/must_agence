@@ -1,0 +1,35 @@
+<footer>
+  <div class="ctn">
+    <div class="ftg">
+      <div>
+        <div class="ftb">
+          <img src="{{ site.logo_green }}" alt="{{ site.name }}" id="fLogo">
+        </div>
+        <p class="ftd" data-cms-edit="site.footer.description">{{ site.footer.description }}</p>
+      </div>
+      <div class="ftc">
+        <div class="ftcl">
+          <h6>Pôles</h6>
+          <a onclick="goPage('artiste');return false" href="#">Artiste</a>
+          <a onclick="goPage('entreprise');return false" href="#">Entreprise</a>
+          <a onclick="goSec('portfolio');return false" href="#">Portfolio</a>
+        </div>
+        <div class="ftcl">
+          <h6>Agence</h6>
+          <a onclick="goSec('equipe');return false" href="#">Équipe</a>
+          <a onclick="goSec('contact');return false" href="#">Contact</a>
+        </div>
+        <div class="ftcl">
+          <h6>Social</h6>
+          {%- for social in site.footer.social %}
+          <a href="{{ social.url }}" target="_blank">{{ social.label }}</a>
+          {%- endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="ftbr">
+      <span data-cms-edit="site.footer.copyright">{{ site.footer.copyright }}</span>
+      <span>{{ site.footer.tagline }}</span>
+    </div>
+  </div>
+</footer>

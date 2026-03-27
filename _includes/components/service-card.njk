@@ -1,0 +1,11 @@
+{# Service card — expects: service (object), delay_class (string) #}
+<div class="sc2 rv {{ delay_class }}">
+  <div class="sn">{{ service.number }}</div>
+  <h3>{{ service.title }}</h3>
+  <p>{{ service.description }}</p>
+  <div class="ch">
+    {%- for chip in service.chips %}
+    <span>{{ chip }}</span>
+    {%- endfor %}
+  </div>
+</div>

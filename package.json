@@ -1,0 +1,13 @@
+{
+  "name": "must-agence",
+  "version": "1.0.0",
+  "description": "Must Agence — Site web premium, agence créative musicale et marketing digital",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

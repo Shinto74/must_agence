@@ -1,0 +1,19 @@
+<nav id="nav">
+  <div class="nl" onclick="goPage('home')">
+    <img src="{{ site.logo_green }}" alt="{{ site.name }}" id="nLogo" data-cms-edit="site.logo_green">
+  </div>
+  <div class="nk" id="nLinks">
+    {%- for link in site.nav_links %}
+    <a {% if link.page %}onclick="goPage('{{ link.page }}');return false"{% elif link.section %}onclick="goSec('{{ link.section }}');return false"{% endif %} href="#">{{ link.label }}</a>
+    {%- endfor %}
+  </div>
+  <button class="ncta" onclick="goSec('contact')" data-cms-edit="site.nav_cta">{{ site.nav_cta }}</button>
+  <button class="bur" id="bur" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mnav" id="mnav">
+  <a onclick="goPage('home');cM()" href="#">Accueil</a>
+  {%- for link in site.nav_links %}
+  <a {% if link.page %}onclick="goPage('{{ link.page }}');cM()"{% elif link.section %}onclick="goSec('{{ link.section }}');cM()"{% endif %} href="#">{{ link.label }}</a>
+  {%- endfor %}
+</div>

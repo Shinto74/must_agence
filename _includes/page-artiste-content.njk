@@ -1,0 +1,94 @@
+{# ═══ ARTISTE PAGE CONTENT ═══ #}
+
+{# HERO #}
+<section class="subh" data-cms-edit="services_artiste.hero">
+  <div class="shbg art-shbg"><div class="orb a"></div><div class="orb b"></div><div class="vl"></div></div>
+  <div class="shin">
+    <div class="bk" onclick="goPage('home')">← Retour</div>
+    <img src="{{ site.logo_white }}" alt="{{ site.name }}" class="shlg">
+    <div class="shtg" style="color:var(--neon)">{{ services_artiste.hero.tag }}</div>
+    <h1>{{ services_artiste.hero.title_line1 }}<br><span style="color:var(--neon)">{{ services_artiste.hero.title_accent }}</span></h1>
+    <p class="shdesc">{{ services_artiste.hero.description }}</p>
+    <div class="shbt">
+      <a class="btn bn" onclick="goSec('ct-art');return false" href="#">{{ services_artiste.hero.cta_primary }}</a>
+      <a class="btn bg" onclick="goSec('svc-art');return false" href="#">{{ services_artiste.hero.cta_secondary }}</a>
+    </div>
+  </div>
+</section>
+
+{# MARQUEE #}
+<div class="mq"><div class="mqt art-mqt">
+  {%- for w in services_artiste.marquee_words %}<span>{{ w }}</span>{%- endfor %}
+  {%- for w in services_artiste.marquee_words %}<span>{{ w }}</span>{%- endfor %}
+</div></div>
+
+{# EXPERTISE PILLARS #}
+<section style="background:var(--sf);padding-bottom:60px">
+  <div class="ctn">
+    <div class="rv"><div class="sl-t">Notre savoir-faire</div><h2 class="sh">Dominez le feed.<br>Bâtissez un empire.</h2><p class="ss">On ne gère pas des carrières, on bâtit des dynasties. Chaque campagne est une science, chaque contenu une arme.</p></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:52px">
+      {%- for exp in services_artiste.expertise %}
+      <div class="rv d{{ loop.index }}" style="border:1px solid var(--bd);padding:40px 28px;background:var(--bg);transition:all .4s;position:relative;overflow:hidden" data-cms-edit="services_artiste.expertise[{{ loop.index0 }}]">
+        <div style="font-family:var(--fd);font-size:64px;font-weight:600;color:var(--neon);opacity:.1;line-height:1;margin-bottom:16px">{{ exp.number }}</div>
+        <h3 style="font-family:var(--fd);font-size:20px;font-weight:500;margin-bottom:10px;color:var(--neon)">{{ exp.title }}</h3>
+        <p style="font-size:13.5px;color:var(--sm);line-height:1.7">{{ exp.text }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# SERVICES #}
+<section id="svc-art">
+  <div class="ctn">
+    <div class="rv"><div class="sl-t">Services détaillés</div><h2 class="sh">Tout ce qu'il faut<br>pour exploser.</h2></div>
+    <div class="svg2">
+      {%- for service in services_artiste.services %}
+        {%- set delay_class = "d1" if loop.index % 2 == 1 else "d2" %}
+        {% include "components/service-card.njk" %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# PROCESS #}
+<section style="background:var(--sf)">
+  <div class="ctn">
+    <div class="rv"><div class="sl-t">Méthode</div><h2 class="sh">Comment on travaille.</h2></div>
+    <div class="prc rv">
+      {%- for step in services_artiste.process %}
+      <div class="ps" data-cms-edit="services_artiste.process[{{ loop.index0 }}]">
+        <div class="psn" style="color:var(--neon)">{{ step.number }}</div>
+        <h4>{{ step.title }}</h4>
+        <p>{{ step.text }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# STATS #}
+<section style="padding-top:0;padding-bottom:0">
+  <div class="ctn">
+    {% set items = stats.artiste %}{% set accent_color = "var(--neon)" %}
+    {% include "components/stats.njk" %}
+  </div>
+</section>
+
+{# CTA #}
+<div class="ctab art-ctab rv" data-cms-edit="services_artiste.cta">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,var(--ng),transparent 70%);opacity:.4"></div>
+  <h2 style="position:relative">{{ services_artiste.cta.title | safe }}</h2>
+  <p style="position:relative">{{ services_artiste.cta.subtitle }}</p>
+  <a class="btn bn" style="position:relative" onclick="goSec('ct-art');return false" href="#">{{ services_artiste.cta.button }}</a>
+</div>
+
+{# CONTACT #}
+<section id="ct-art">
+  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,var(--ng),transparent 70%);filter:blur(100px);opacity:.25;pointer-events:none"></div>
+  <div class="ctn">
+    {% set contact_data = services_artiste.contact %}
+    {% set form_options = services_artiste.contact.form_options %}
+    {% include "components/contact-form.njk" %}
+  </div>
+</section>

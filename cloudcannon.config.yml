@@ -1,0 +1,283 @@
+# CloudCannon Configuration for Must Agence
+# SSG: Eleventy (11ty)
+
+source: ""
+output: "_site"
+
+collections_config:
+  pages:
+    path: "pages"
+    name: "Pages"
+    icon: "web"
+    description: "Pages du site"
+    output: true
+    filter:
+      base: "none"
+      include:
+        - "index.njk"
+        - "artiste.njk"
+        - "entreprise.njk"
+    _enabled_editors:
+      - visual
+      - content
+      - data
+    add_options:
+      - name: "Nouvelle page"
+        editor: content
+        schema: default
+    schemas:
+      default:
+        path: ".cloudcannon/schemas/page.njk"
+
+  team:
+    path: ""
+    name: "Équipe"
+    icon: "people"
+    description: "Membres de l'équipe — ajoutez, modifiez ou supprimez"
+    output: false
+    data: true
+    filter:
+      base: "none"
+      include:
+        - "_data/team.json"
+    _enabled_editors:
+      - data
+
+  services_artiste:
+    path: ""
+    name: "Services Artiste"
+    icon: "music_note"
+    description: "Services du pôle Artiste — modifiez les textes, titres et descriptions"
+    output: false
+    data: true
+    filter:
+      base: "none"
+      include:
+        - "_data/services_artiste.json"
+    _enabled_editors:
+      - data
+
+  services_entreprise:
+    path: ""
+    name: "Services Entreprise"
+    icon: "business"
+    description: "Services du pôle Entreprise — modifiez les textes, titres et descriptions"
+    output: false
+    data: true
+    filter:
+      base: "none"
+      include:
+        - "_data/services_entreprise.json"
+    _enabled_editors:
+      - data
+
+  stats:
+    path: ""
+    name: "Statistiques"
+    icon: "bar_chart"
+    description: "Chiffres clés affichés sur les pages (home, artiste, entreprise)"
+    output: false
+    data: true
+    filter:
+      base: "none"
+      include:
+        - "_data/stats.json"
+    _enabled_editors:
+      - data
+
+  site_settings:
+    path: ""
+    name: "Paramètres du site"
+    icon: "settings"
+    description: "Informations générales, hero, contact, footer, vision, logos"
+    output: false
+    data: true
+    filter:
+      base: "none"
+      include:
+        - "_data/site.json"
+    _enabled_editors:
+      - data
+
+data_config:
+  team:
+    path: "_data/team.json"
+  stats:
+    path: "_data/stats.json"
+  services_artiste:
+    path: "_data/services_artiste.json"
+  services_entreprise:
+    path: "_data/services_entreprise.json"
+  site:
+    path: "_data/site.json"
+
+_inputs:
+  # Team member fields
+  initials:
+    type: text
+    label: "Initiales"
+    comment: "2-3 lettres affichées dans l'avatar"
+  name:
+    type: text
+    label: "Nom complet"
+  role:
+    type: text
+    label: "Poste / Rôle"
+  bio:
+    type: textarea
+    label: "Biographie courte"
+    comment: "Apparaît au hover sur la photo"
+
+  # Service fields
+  number:
+    type: text
+    label: "Numéro"
+    comment: "Ex: 01, 02..."
+  title:
+    type: text
+    label: "Titre du service"
+  description:
+    type: textarea
+    label: "Description"
+  chips:
+    type: array
+    label: "Tags / Mots-clés"
+    comment: "Petits badges affichés sous la description"
+
+  # Stats fields
+  value:
+    type: number
+    label: "Valeur numérique"
+    comment: "Le chiffre qui sera animé (ex: 500)"
+  suffix:
+    type: text
+    label: "Suffixe"
+    comment: "Texte après le chiffre (ex: M+, %, x)"
+  label:
+    type: text
+    label: "Légende"
+    comment: "Texte sous le chiffre"
+
+  # Contact fields
+  email:
+    type: email
+    label: "Adresse email"
+  phone:
+    type: text
+    label: "Numéro de téléphone"
+  location:
+    type: text
+    label: "Localisation"
+  whatsapp_url:
+    type: url
+    label: "Lien WhatsApp"
+
+  # General
+  tag:
+    type: text
+    label: "Sous-titre / Tag"
+  text:
+    type: textarea
+    label: "Texte"
+  quote:
+    type: textarea
+    label: "Citation"
+  subtitle:
+    type: textarea
+    label: "Sous-titre"
+  url:
+    type: url
+    label: "URL"
+
+  # Logos
+  logo_green:
+    type: image
+    label: "Logo vert (M vert fluo)"
+    comment: "Logo principal utilisé sur l'accueil et le pôle entreprise"
+  logo_white:
+    type: image
+    label: "Logo blanc (M blanc)"
+    comment: "Logo utilisé sur le pôle artiste"
+
+  # Form
+  placeholder:
+    type: text
+    label: "Placeholder"
+  rows:
+    type: number
+    label: "Nombre de lignes"
+  options:
+    type: array
+    label: "Options du select"
+  form_options:
+    type: array
+    label: "Options du formulaire de contact"
+
+_editables:
+  text:
+    bold: true
+    italic: true
+    link: true
+  block:
+    bold: true
+    italic: true
+    link: true
+    heading: true
+
+_structures:
+  team_member:
+    values:
+      - label: "Nouveau membre"
+        value:
+          initials: ""
+          name: ""
+          role: ""
+          bio: ""
+
+  service_item:
+    values:
+      - label: "Nouveau service"
+        value:
+          number: ""
+          title: ""
+          description: ""
+          chips: []
+
+  stat_item:
+    values:
+      - label: "Nouvelle statistique"
+        value:
+          value: 0
+          suffix: ""
+          label: ""
+
+  expertise_item:
+    values:
+      - label: "Nouveau pilier d'expertise"
+        value:
+          number: ""
+          title: ""
+          text: ""
+
+  case_study:
+    values:
+      - label: "Nouvelle étude de cas"
+        value:
+          icon: "🎵"
+          tag: ""
+          title: ""
+          description: ""
+          metrics: []
+
+  metric_item:
+    values:
+      - label: "Nouvelle métrique"
+        value:
+          value: ""
+          label: ""
+
+generator:
+  metadata:
+    markdown: markdown-it
+    markdown-it:
+      html: true

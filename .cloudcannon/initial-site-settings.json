@@ -1,0 +1,8 @@
+{
+  "ssg": "eleventy",
+  "build_command": "npx @11ty/eleventy",
+  "output_path": "_site",
+  "source_path": "",
+  "timezone": "Europe/Paris",
+  "base_url": ""
+}

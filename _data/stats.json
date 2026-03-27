@@ -1,0 +1,20 @@
+{
+  "home": [
+    { "value": 500, "suffix": "M+", "label": "Vues générées" },
+    { "value": 400, "suffix": "+", "label": "Campagnes TikTok" },
+    { "value": 28, "suffix": "", "label": "Singles d'Or" },
+    { "value": 5, "suffix": "", "label": "Singles Diamant" }
+  ],
+  "artiste": [
+    { "value": 50, "suffix": "+", "label": "Artistes accompagnés" },
+    { "value": 400, "suffix": "+", "label": "Campagnes lancées" },
+    { "value": 500, "suffix": "M", "label": "Vues générées" },
+    { "value": 28, "suffix": "", "label": "Singles d'Or" }
+  ],
+  "entreprise": [
+    { "value": 100, "suffix": "+", "label": "Clients entreprises" },
+    { "value": 8, "suffix": "x", "label": "ROAS moyen" },
+    { "value": 45, "suffix": "%", "label": "Réduction CPA" },
+    { "value": 98, "suffix": "%", "label": "Renouvellement" }
+  ]
+}

@@ -1,0 +1,30 @@
+{# Contact section — expects: contact_data (object), accent_color (string), form_options (array) #}
+<div class="rv"><div class="sl-t">Contact</div><h2 class="sh">{{ contact_data.title_line1 }}<br>{{ contact_data.title_line2 }}</h2></div>
+<div class="ctg">
+  <div class="ctl rv d1">
+    <h3 data-cms-edit>{{ contact_data.heading | safe }}</h3>
+    <p data-cms-edit>{{ contact_data.text }}</p>
+    <div class="ctlk">
+      <a href="mailto:{{ contact_data.email }}"><span class="ar">→</span> {{ contact_data.email }}</a>
+      <a href="tel:{{ site.contact.phone | replace(' ', '') }}"><span class="ar">→</span> {{ site.contact.phone }}</a>
+      {%- if site.contact.location %}
+      <a href="#"><span class="ar">→</span> {{ site.contact.location }}</a>
+      {%- endif %}
+    </div>
+  </div>
+  <div class="fm rv d2">
+    <input type="text" placeholder="Nom / Nom d'artiste" name="name">
+    <input type="email" placeholder="Email" name="email">
+    <select name="project_type">
+      <option value="" disabled selected>Type de projet</option>
+      {%- for opt in form_options %}
+      <option>{{ opt }}</option>
+      {%- endfor %}
+    </select>
+    <textarea rows="4" placeholder="Décrivez votre projet..." name="message"></textarea>
+    <div class="fma">
+      <button class="btn bn" onclick="fSub(this)">Envoyer</button>
+      <a href="{{ site.contact.whatsapp_url }}" target="_blank" class="bwa">WhatsApp →</a>
+    </div>
+  </div>
+</div>

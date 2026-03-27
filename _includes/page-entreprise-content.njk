@@ -1,0 +1,94 @@
+{# ═══ ENTREPRISE PAGE CONTENT ═══ #}
+
+{# HERO #}
+<section class="subh" data-cms-edit="services_entreprise.hero">
+  <div class="shbg"><div class="orb a"></div><div class="orb b"></div><div class="vl"></div></div>
+  <div class="shin">
+    <div class="bk" onclick="goPage('home')">← Retour</div>
+    <img src="{{ site.logo_green }}" alt="{{ site.name }}" class="shlg">
+    <div class="shtg">{{ services_entreprise.hero.tag }}</div>
+    <h1>{{ services_entreprise.hero.title_line1 }}<br><span style="color:var(--wh)">{{ services_entreprise.hero.title_accent }}</span></h1>
+    <p class="shdesc">{{ services_entreprise.hero.description }}</p>
+    <div class="shbt">
+      <a class="btn bn" onclick="goSec('ct-ent');return false" href="#">{{ services_entreprise.hero.cta_primary }}</a>
+      <a class="btn bg" onclick="goSec('svc-ent');return false" href="#">{{ services_entreprise.hero.cta_secondary }}</a>
+    </div>
+  </div>
+</section>
+
+{# MARQUEE #}
+<div class="mq"><div class="mqt">
+  {%- for w in services_entreprise.marquee_words %}<span>{{ w }}</span>{%- endfor %}
+  {%- for w in services_entreprise.marquee_words %}<span>{{ w }}</span>{%- endfor %}
+</div></div>
+
+{# EXPERTISE PILLARS #}
+<section style="background:var(--sf);padding-bottom:60px">
+  <div class="ctn">
+    <div class="rv"><div class="sl-t">Notre approche</div><h2 class="sh">Performance.<br>Conversion. ROI.</h2><p class="ss">Chaque action est mesurée, chaque euro optimisé. On ne fait pas du marketing, on fait de la croissance.</p></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:52px">
+      {%- for exp in services_entreprise.expertise %}
+      <div class="rv d{{ loop.index }}" style="border:1px solid var(--bd);padding:40px 28px;background:var(--bg);transition:all .4s" data-cms-edit="services_entreprise.expertise[{{ loop.index0 }}]">
+        <div style="font-family:var(--fd);font-size:64px;font-weight:600;color:var(--wh);opacity:.08;line-height:1;margin-bottom:16px">{{ exp.number }}</div>
+        <h3 style="font-family:var(--fd);font-size:20px;font-weight:500;margin-bottom:10px">{{ exp.title }}</h3>
+        <p style="font-size:13.5px;color:var(--sm);line-height:1.7">{{ exp.text }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# SERVICES #}
+<section id="svc-ent">
+  <div class="ctn">
+    <div class="rv"><div class="sl-t">Services détaillés</div><h2 class="sh">La performance,<br>sans compromis.</h2></div>
+    <div class="svg2">
+      {%- for service in services_entreprise.services %}
+        {%- set delay_class = "d1" if loop.index % 2 == 1 else "d2" %}
+        {% include "components/service-card.njk" %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# PROCESS #}
+<section style="background:var(--sf)">
+  <div class="ctn">
+    <div class="rv"><div class="sl-t">Méthode</div><h2 class="sh">Comment on travaille.</h2></div>
+    <div class="prc rv">
+      {%- for step in services_entreprise.process %}
+      <div class="ps" data-cms-edit="services_entreprise.process[{{ loop.index0 }}]">
+        <div class="psn">{{ step.number }}</div>
+        <h4>{{ step.title }}</h4>
+        <p>{{ step.text }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# STATS #}
+<section style="padding-top:0;padding-bottom:0">
+  <div class="ctn">
+    {% set items = stats.entreprise %}{% set accent_color = "var(--wh)" %}
+    {% include "components/stats.njk" %}
+  </div>
+</section>
+
+{# CTA #}
+<div class="ctab rv" data-cms-edit="services_entreprise.cta">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,255,255,.04),transparent 70%);opacity:.4"></div>
+  <h2 style="position:relative">{{ services_entreprise.cta.title | safe }}</h2>
+  <p style="position:relative">{{ services_entreprise.cta.subtitle }}</p>
+  <a class="btn bn" style="position:relative" onclick="goSec('ct-ent');return false" href="#">{{ services_entreprise.cta.button }}</a>
+</div>
+
+{# CONTACT #}
+<section id="ct-ent">
+  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(255,255,255,.04),transparent 70%);filter:blur(100px);opacity:.3;pointer-events:none"></div>
+  <div class="ctn">
+    {% set contact_data = services_entreprise.contact %}
+    {% set form_options = services_entreprise.contact.form_options %}
+    {% include "components/contact-form.njk" %}
+  </div>
+</section>
