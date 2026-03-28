@@ -1,22 +1,22 @@
-# CloudCannon Configuration for Must Agence
+# ═══════════════════════════════════════
+# CloudCannon Config — Must Agence
 # SSG: Eleventy (11ty)
+# ═══════════════════════════════════════
 
 source: ""
 output: "_site"
 
+paths:
+  uploads: "src/assets/images/uploads"
+
 collections_config:
+
   pages:
     path: "pages"
     name: "Pages"
     icon: "web"
     description: "Pages du site"
     output: true
-    filter:
-      base: "none"
-      include:
-        - "index.njk"
-        - "artiste.njk"
-        - "entreprise.njk"
     _enabled_editors:
       - visual
       - content
@@ -43,11 +43,39 @@ collections_config:
     _enabled_editors:
       - data
 
+  artistes:
+    path: ""
+    name: "Artistes"
+    icon: "mic"
+    description: "Roster d'artistes — ajoutez, modifiez ou supprimez des artistes"
+    output: false
+    data: true
+    filter:
+      base: "none"
+      include:
+        - "_data/artistes.json"
+    _enabled_editors:
+      - data
+
+  clients:
+    path: ""
+    name: "Clients / Logos"
+    icon: "store"
+    description: "Logos des entreprises clientes — ajoutez, modifiez ou supprimez"
+    output: false
+    data: true
+    filter:
+      base: "none"
+      include:
+        - "_data/clients.json"
+    _enabled_editors:
+      - data
+
   services_artiste:
     path: ""
     name: "Services Artiste"
     icon: "music_note"
-    description: "Services du pôle Artiste — modifiez les textes, titres et descriptions"
+    description: "Services du pôle Artiste"
     output: false
     data: true
     filter:
@@ -61,7 +89,7 @@ collections_config:
     path: ""
     name: "Services Entreprise"
     icon: "business"
-    description: "Services du pôle Entreprise — modifiez les textes, titres et descriptions"
+    description: "Services du pôle Entreprise"
     output: false
     data: true
     filter:
@@ -75,7 +103,7 @@ collections_config:
     path: ""
     name: "Statistiques"
     icon: "bar_chart"
-    description: "Chiffres clés affichés sur les pages (home, artiste, entreprise)"
+    description: "Chiffres clés (home, artiste, entreprise)"
     output: false
     data: true
     filter:
@@ -102,6 +130,10 @@ collections_config:
 data_config:
   team:
     path: "_data/team.json"
+  artistes:
+    path: "_data/artistes.json"
+  clients:
+    path: "_data/clients.json"
   stats:
     path: "_data/stats.json"
   services_artiste:
@@ -109,46 +141,99 @@ data_config:
   services_entreprise:
     path: "_data/services_entreprise.json"
   site:
+  references_artistes:
+    path: "_data/references_artistes.json"
+  references_entreprises:
+    path: "_data/references_entreprises.json"
+  packs:
+    path: "_data/packs.json"
+  form_devis:
+    path: "_data/form_devis.json"
     path: "_data/site.json"
+  references_artistes:
+    path: "_data/references_artistes.json"
+  references_entreprises:
+    path: "_data/references_entreprises.json"
+  packs:
+    path: "_data/packs.json"
+  form_devis:
+    path: "_data/form_devis.json"
+
+# ═══ Input field configuration ═══
 
 _inputs:
-  # Team member fields
+
+  # ── Artistes ──
+  image:
+    type: image
+    label: "Photo"
+    comment: "Photo de l'artiste (format portrait recommandé, ratio 3:4)"
+    options:
+      paths:
+        uploads: "src/assets/images/artistes"
+
+  # ── Clients ──
+  logo:
+    type: image
+    label: "Logo"
+    comment: "Logo de l'entreprise (fond transparent recommandé)"
+    options:
+      paths:
+        uploads: "src/assets/images/clients"
+
+  # ── Logos Must Agence ──
+  logo_green:
+    type: image
+    label: "Logo vert (M vert fluo)"
+    comment: "Logo principal — accueil et pôle entreprise"
+    options:
+      paths:
+        uploads: "src/assets/images/logos"
+  logo_white:
+    type: image
+    label: "Logo blanc (M blanc)"
+    comment: "Logo secondaire — pôle artiste"
+    options:
+      paths:
+        uploads: "src/assets/images/logos"
+
+  # ── Team ──
   initials:
     type: text
     label: "Initiales"
-    comment: "2-3 lettres affichées dans l'avatar"
+    comment: "2-3 lettres affichées dans l'avatar (ex: MD)"
   name:
     type: text
-    label: "Nom complet"
+    label: "Nom"
   role:
     type: text
     label: "Poste / Rôle"
   bio:
     type: textarea
-    label: "Biographie courte"
-    comment: "Apparaît au hover sur la photo"
+    label: "Bio courte"
+    comment: "Apparaît au hover sur la carte"
 
-  # Service fields
+  # ── Services ──
   number:
     type: text
     label: "Numéro"
     comment: "Ex: 01, 02..."
   title:
     type: text
-    label: "Titre du service"
+    label: "Titre"
   description:
     type: textarea
     label: "Description"
   chips:
     type: array
     label: "Tags / Mots-clés"
-    comment: "Petits badges affichés sous la description"
+    comment: "Badges affichés sous la description"
 
-  # Stats fields
+  # ── Stats ──
   value:
     type: number
     label: "Valeur numérique"
-    comment: "Le chiffre qui sera animé (ex: 500)"
+    comment: "Chiffre animé (ex: 500)"
   suffix:
     type: text
     label: "Suffixe"
@@ -156,15 +241,14 @@ _inputs:
   label:
     type: text
     label: "Légende"
-    comment: "Texte sous le chiffre"
 
-  # Contact fields
+  # ── Contact ──
   email:
     type: email
-    label: "Adresse email"
+    label: "Email"
   phone:
     type: text
-    label: "Numéro de téléphone"
+    label: "Téléphone"
   location:
     type: text
     label: "Localisation"
@@ -172,7 +256,7 @@ _inputs:
     type: url
     label: "Lien WhatsApp"
 
-  # General
+  # ── General ──
   tag:
     type: text
     label: "Sous-titre / Tag"
@@ -188,18 +272,6 @@ _inputs:
   url:
     type: url
     label: "URL"
-
-  # Logos
-  logo_green:
-    type: image
-    label: "Logo vert (M vert fluo)"
-    comment: "Logo principal utilisé sur l'accueil et le pôle entreprise"
-  logo_white:
-    type: image
-    label: "Logo blanc (M blanc)"
-    comment: "Logo utilisé sur le pôle artiste"
-
-  # Form
   placeholder:
     type: text
     label: "Placeholder"
@@ -208,21 +280,16 @@ _inputs:
     label: "Nombre de lignes"
   options:
     type: array
-    label: "Options du select"
+    label: "Options"
   form_options:
     type: array
-    label: "Options du formulaire de contact"
+    label: "Options du formulaire"
+  icon:
+    type: text
+    label: "Icône (emoji)"
+    comment: "Emoji affiché dans la miniature (ex: 🎵)"
 
-_editables:
-  text:
-    bold: true
-    italic: true
-    link: true
-  block:
-    bold: true
-    italic: true
-    link: true
-    heading: true
+# ═══ Structures for adding new items ═══
 
 _structures:
   team_member:
@@ -233,6 +300,20 @@ _structures:
           name: ""
           role: ""
           bio: ""
+
+  artiste_item:
+    values:
+      - label: "Nouvel artiste"
+        value:
+          name: ""
+          image: ""
+
+  client_item:
+    values:
+      - label: "Nouveau client"
+        value:
+          name: ""
+          logo: ""
 
   service_item:
     values:
@@ -253,7 +334,7 @@ _structures:
 
   expertise_item:
     values:
-      - label: "Nouveau pilier d'expertise"
+      - label: "Nouveau pilier"
         value:
           number: ""
           title: ""
@@ -276,8 +357,82 @@ _structures:
           value: ""
           label: ""
 
+  social_link:
+    values:
+      - label: "Nouveau réseau social"
+        value:
+          label: ""
+          url: ""
+
+_editables:
+  text:
+    bold: true
+    italic: true
+    link: true
+  block:
+    bold: true
+    italic: true
+    link: true
+    heading: true
+
 generator:
   metadata:
     markdown: markdown-it
     markdown-it:
       html: true
+
+  references_artistes:
+    path: ""
+    name: "Références Artistes"
+    icon: "album"
+    description: "Artistes par catégorie — photos, noms, catégories (ajout/suppression libre)"
+    output: false
+    data: true
+    filter:
+      base: "none"
+      include:
+        - "_data/references_artistes.json"
+    _enabled_editors:
+      - data
+
+  references_entreprises:
+    path: ""
+    name: "Références Entreprises"
+    icon: "storefront"
+    description: "Logos entreprises par catégorie (ajout/suppression libre)"
+    output: false
+    data: true
+    filter:
+      base: "none"
+      include:
+        - "_data/references_entreprises.json"
+    _enabled_editors:
+      - data
+
+  packs:
+    path: ""
+    name: "Packs Artistes"
+    icon: "shopping_cart"
+    description: "3 packs tarifés + offre sur-mesure (prix, features, bonus)"
+    output: false
+    data: true
+    filter:
+      base: "none"
+      include:
+        - "_data/packs.json"
+    _enabled_editors:
+      - data
+
+  form_devis:
+    path: ""
+    name: "Formulaire Devis"
+    icon: "assignment"
+    description: "Étapes du formulaire de devis personnalisé"
+    output: false
+    data: true
+    filter:
+      base: "none"
+      include:
+        - "_data/form_devis.json"
+    _enabled_editors:
+      - data

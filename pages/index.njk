@@ -5,7 +5,7 @@ meta_title: "Must Agence — Influence Agency"
 meta_description: "Agence d'influence spécialisée musique et marques. Campagnes TikTok, stratégie sociale et développement artiste."
 ---
 
-{# ═══ PAGE: HOME ═══ #}
+{# ═══════════════ PAGE: HOME ═══════════════ #}
 <div class="pg act" id="pg-home">
 
 {# HERO #}
@@ -42,7 +42,6 @@ meta_description: "Agence d'influence spécialisée musique et marques. Campagne
   <div class="ctn">
     <div class="rv"><div class="sl-t">Nos univers</div><h2 class="sh">Deux pôles.<br>Un objectif.</h2><p class="ss">Artiste ou marque, on a l'approche taillée pour vous.</p></div>
     <div class="pcg">
-      {# Artiste card #}
       <div class="pc rv d1" onclick="goPage('artiste')" data-cms-edit="site.poles.artiste">
         <img src="{{ site.logo_white }}" alt="" class="pl">
         <div class="pt2">{{ site.poles.artiste.tag }}</div>
@@ -51,7 +50,6 @@ meta_description: "Agence d'influence spécialisée musique et marques. Campagne
         <div class="pch">{%- for c in site.poles.artiste.chips %}<span>{{ c }}</span>{%- endfor %}</div>
         <div class="plk">Découvrir <span>→</span></div>
       </div>
-      {# Entreprise card #}
       <div class="pc ent rv d2" onclick="goPage('entreprise')" data-cms-edit="site.poles.entreprise">
         <img src="{{ site.logo_green }}" alt="" class="pl">
         <div class="pt2">{{ site.poles.entreprise.tag }}</div>
@@ -63,6 +61,12 @@ meta_description: "Agence d'influence spécialisée musique et marques. Campagne
     </div>
   </div>
 </section>
+
+{# ═══ REFERENCES ARTISTES ═══ #}
+{% include "components/references-artistes.njk" %}
+
+{# ═══ REFERENCES ENTREPRISES ═══ #}
+{% include "components/references-entreprises.njk" %}
 
 {# VISION #}
 <section style="background:var(--sf)" data-cms-edit="site.vision">
@@ -91,32 +95,28 @@ meta_description: "Agence d'influence spécialisée musique et marques. Campagne
   </div>
 </section>
 
-{# PORTFOLIO #}
-<section id="portfolio" style="background:var(--sf)">
+{# PORTFOLIO / CASE STUDIES #}
+<section id="portfolio">
   <div class="ctn">
     <div class="rv"><div class="sl-t">Portfolio</div><h2 class="sh">Les chiffres<br>ne mentent pas.</h2><p class="ss">Campagnes, résultats, impact.</p></div>
-  </div>
-  <div class="clw"><div class="clt">
-    {%- for c in site.clients %}<span>{{ c }}</span>{%- endfor %}
-    {%- for c in site.clients %}<span>{{ c }}</span>{%- endfor %}
-  </div></div>
-  <div class="ctn"><div class="csg">
-    {%- for cs in site.cases %}
-    <div class="cc rv {% if loop.index > 1 %}d{{ loop.index - 1 }}{% endif %}" data-cms-edit="site.cases[{{ loop.index0 }}]">
-      <div class="ccth">{{ cs.icon }}</div>
-      <div class="ccb">
-        <div class="cctg" style="color:var(--neon)">{{ cs.tag }}</div>
-        <h3>{{ cs.title }}</h3>
-        <p>{{ cs.description }}</p>
-        <div class="ccm">
-          {%- for m in cs.metrics %}
-          <div class="m"><span class="mv" style="color:var(--neon)">{{ m.value }}</span><span class="ml">{{ m.label }}</span></div>
-          {%- endfor %}
+    <div class="csg" style="margin-top:48px">
+      {%- for cs in site.cases %}
+      <div class="cc rv {% if loop.index > 1 %}d{{ loop.index - 1 }}{% endif %}" data-cms-edit="site.cases[{{ loop.index0 }}]">
+        <div class="ccth">{{ cs.icon }}</div>
+        <div class="ccb">
+          <div class="cctg" style="color:var(--neon)">{{ cs.tag }}</div>
+          <h3>{{ cs.title }}</h3>
+          <p>{{ cs.description }}</p>
+          <div class="ccm">
+            {%- for m in cs.metrics %}
+            <div class="m"><span class="mv" style="color:var(--neon)">{{ m.value }}</span><span class="ml">{{ m.label }}</span></div>
+            {%- endfor %}
+          </div>
         </div>
       </div>
+      {%- endfor %}
     </div>
-    {%- endfor %}
-  </div></div>
+  </div>
 </section>
 
 {# CTA BAND #}
@@ -132,7 +132,6 @@ meta_description: "Agence d'influence spécialisée musique et marques. Campagne
   <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,var(--ng),transparent 70%);filter:blur(100px);opacity:.25;pointer-events:none"></div>
   <div class="ctn">
     {% set contact_data = site.contact %}
-    {% set form_options = site.contact.form_fields | selectattr("type", "equalto", "select") | first %}
     {% set form_options = ["Pôle Artiste / Musique", "Pôle Corporate / Marque", "Autre"] %}
     {% include "components/contact-form.njk" %}
   </div>
@@ -140,12 +139,12 @@ meta_description: "Agence d'influence spécialisée musique et marques. Campagne
 
 </div>
 
-{# ═══ PAGE: ARTISTE ═══ #}
+{# ═══════════════ PAGE: ARTISTE ═══════════════ #}
 <div class="pg" id="pg-artiste">
   {% include "page-artiste-content.njk" %}
 </div>
 
-{# ═══ PAGE: ENTREPRISE ═══ #}
+{# ═══════════════ PAGE: ENTREPRISE ═══════════════ #}
 <div class="pg ent-pg" id="pg-entreprise">
   {% include "page-entreprise-content.njk" %}
 </div>

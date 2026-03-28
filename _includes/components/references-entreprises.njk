@@ -1,0 +1,21 @@
+{# References Entreprises — Logo+Nom marquee par catégorie, agrandi #}
+<section class="ref-ent" data-cms-edit="references_entreprises">
+  <div class="ctn">
+    <div class="rv"><div class="sl-t w">{{ references_entreprises.label }}</div>
+    <h2 class="sh">{{ references_entreprises.title_line1 }}<br>{{ references_entreprises.title_line2 }}</h2></div>
+    <div class="mq-section">
+      {%- for cat in references_entreprises.categories %}
+      <div class="mq-block{% if loop.index % 2 == 0 %} rev{% endif %}" data-cms-edit="references_entreprises.categories[{{ loop.index0 }}]">
+        <div class="mq-label">{{ cat.name }}</div>
+        <div class="mq-row"><div class="mq-track">
+          {%- for r in range(0, 3) %}
+            {%- for client in cat.clients %}
+          <div class="mq-item"><img src="{{ client.logo }}" alt="{{ client.name }}" loading="lazy"><span>{{ client.name }}</span></div>
+            {%- endfor %}
+          {%- endfor %}
+        </div></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

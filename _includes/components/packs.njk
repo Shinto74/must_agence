@@ -1,0 +1,39 @@
+{# Packs Artistes — Variante A: Cards Clean + Glow Neon #}
+<section class="pa" data-cms-edit="packs">
+  <div class="ctn">
+    <div class="rv"><div class="sl-t">{{ packs.label }}</div>
+    <h2 class="sh">{{ packs.title }}</h2>
+    <p class="ss">{{ packs.subtitle }}</p></div>
+    <div class="pk-grid">
+      {%- for pack in packs.packs %}
+      <div class="pk{% if pack.featured %} feat{% endif %}" data-cms-edit="packs.packs[{{ loop.index0 }}]">
+        {%- if pack.featured and pack.badge %}
+        <div class="badge">{{ pack.badge }}</div>
+        {%- endif %}
+        <div class="pk-num">{{ pack.number }}</div>
+        <div class="pk-name">{{ pack.name }}</div>
+        <div class="pk-sub">{{ pack.subtitle }}</div>
+        <div class="pk-price">{{ pack.price }}</div>
+        <div class="pk-ht">{{ pack.price_suffix }}</div>
+        <div class="pk-div"></div>
+        <ul class="pk-feat">
+          {%- for feature in pack.features %}
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;width:15px;height:15px;color:var(--neon);margin-top:3px"><polyline points="20 6 9 17 4 12"/></svg>{{ feature }}</li>
+          {%- endfor %}
+          {%- if pack.bonus %}
+          <li class="bonus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;width:15px;height:15px;color:var(--neon);margin-top:3px"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>{{ pack.bonus }}</li>
+          {%- endif %}
+          {%- if pack.reassurance %}
+          <li class="reas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;width:15px;height:15px;color:var(--neon);margin-top:3px"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>{{ pack.reassurance }}</li>
+          {%- endif %}
+        </ul>
+        <button class="cta-pk" onclick="goSec('ct-devis')">Nous contacter</button>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+<div class="custom-offer rv" data-cms-edit="packs.custom_offer">
+  <p>{{ packs.custom_offer.text }}</p>
+  <button class="cta-custom" onclick="goSec('ct-devis')">{{ packs.custom_offer.button }}</button>
+</div>

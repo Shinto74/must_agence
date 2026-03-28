@@ -1,0 +1,17 @@
+[
+  { "name": "Novotel", "logo": "/src/assets/images/clients/novotel.webp" },
+  { "name": "Hilton", "logo": "/src/assets/images/clients/hilton.webp" },
+  { "name": "Jean Claude Biguine", "logo": "/src/assets/images/clients/jean-claude-biguine.png" },
+  { "name": "Fitness Park", "logo": "/src/assets/images/clients/fitness-park.webp" },
+  { "name": "Basic-Fit", "logo": "/src/assets/images/clients/basic-fit.webp" },
+  { "name": "JD Sports", "logo": "/src/assets/images/clients/jd-sports.webp" },
+  { "name": "Leroy Merlin", "logo": "/src/assets/images/clients/leroy-merlin.webp" },
+  { "name": "Point P", "logo": "/src/assets/images/clients/point-p.webp" },
+  { "name": "Leclerc", "logo": "/src/assets/images/clients/leclerc.webp" },
+  { "name": "Norauto", "logo": "/src/assets/images/clients/norauto.webp" },
+  { "name": "Les Grands Buffets de Narbonne", "logo": "/src/assets/images/clients/grands-buffets-narbonne.jpg" },
+  { "name": "Big Fernand", "logo": "/src/assets/images/clients/big-fernand.webp" },
+  { "name": "Five Guys", "logo": "/src/assets/images/clients/five-guys.webp" },
+  { "name": "Le Pain Quotidien", "logo": "/src/assets/images/clients/le-pain-quotidien.webp" },
+  { "name": "Columbus Café & Co", "logo": "/src/assets/images/clients/columbus-cafe.webp" }
+]

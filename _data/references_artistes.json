@@ -1,0 +1,44 @@
+{
+  "title_line1": "Ils nous ont fait confiance",
+  "title_line2": "pour leurs sorties",
+  "label": "Références Artistes",
+  "categories": [
+    {
+      "name": "Urbain",
+      "slug": "urbain",
+      "artists": [
+        { "name": "Zola", "image": "/src/assets/images/artistes/zola.jpg" },
+        { "name": "Vegedream", "image": "/src/assets/images/artistes/vegedream.jpg" },
+        { "name": "Franglish", "image": "/src/assets/images/artistes/franglish.jpg" },
+        { "name": "Keblack", "image": "/src/assets/images/artistes/keblack.jpg" },
+        { "name": "Ridsa", "image": "/src/assets/images/artistes/ridsa.jpg" },
+        { "name": "Uzi", "image": "/src/assets/images/artistes/uzi.jpg" },
+        { "name": "Bouss", "image": "/src/assets/images/artistes/bouss.jpg" }
+      ]
+    },
+    {
+      "name": "Pop / Variété",
+      "slug": "pop",
+      "artists": [
+        { "name": "Santa", "image": "/src/assets/images/artistes/santa.jpg" },
+        { "name": "Pierre Garnier", "image": "/src/assets/images/artistes/pierre-garnier.jpg" },
+        { "name": "Héléna Bailly", "image": "/src/assets/images/artistes/helena-bailly.jpg" },
+        { "name": "Jeck", "image": "/src/assets/images/artistes/jeck.jpg" }
+      ]
+    },
+    {
+      "name": "Électro / International",
+      "slug": "electro",
+      "artists": [
+        { "name": "Diamond Platnumz", "image": "/src/assets/images/artistes/diamond-platnumz.jpeg" },
+        { "name": "Beéle", "image": "/src/assets/images/artistes/beele.jpg" },
+        { "name": "Benny Adam", "image": "/src/assets/images/artistes/benny-adam.jpg" },
+        { "name": "Theodora", "image": "/src/assets/images/artistes/theodora.jfif" },
+        { "name": "RnBoi", "image": "/src/assets/images/artistes/rnboi.jpg" },
+        { "name": "Moral", "image": "/src/assets/images/artistes/moral.jfif" },
+        { "name": "Ofenbach", "image": "/src/assets/images/artistes/ofenbach.jfif" },
+        { "name": "The Avener", "image": "/src/assets/images/artistes/the-avener.jfif" }
+      ]
+    }
+  ]
+}

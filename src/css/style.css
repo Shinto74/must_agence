@@ -274,3 +274,19 @@ footer{padding:52px 48px 24px;border-top:1px solid var(--bd)}
   .tmg{grid-template-columns:1fr}
   .prc{grid-template-columns:1fr}.ps{border-right:none}
 }
+
+/* ══ ARTIST ROSTER GRID ══ */
+.art-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:52px}
+.art-card{position:relative;overflow:hidden;cursor:default;border:1px solid var(--bd);transition:all .4s var(--ez)}
+.art-card:hover{border-color:rgba(204,255,0,.15);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.art-card img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;filter:grayscale(.3) brightness(.85);transition:all .5s var(--ez)}
+.art-card:hover img{filter:grayscale(0) brightness(1);transform:scale(1.04)}
+.art-card .art-name{position:absolute;bottom:0;left:0;right:0;padding:14px 12px;background:linear-gradient(to top,rgba(10,10,10,.95) 0%,transparent 100%);font-family:var(--fd);font-size:13px;font-weight:500;letter-spacing:-.01em;transform:translateY(100%);transition:transform .35s var(--ez);color:var(--wh)}
+.art-card:hover .art-name{transform:translateY(0)}
+@media(max-width:900px){.art-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.art-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ══ CLIENT LOGO IMAGES (marquee) ══ */
+.cl-img-track{display:flex;gap:48px;width:max-content;animation:mqa 40s linear infinite;align-items:center}
+.cl-img-track .cl-logo{height:36px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.35;transition:all .35s var(--ez);flex-shrink:0}
+.cl-img-track .cl-logo:hover{opacity:.85;filter:brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,.15))}

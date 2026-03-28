@@ -1,0 +1,62 @@
+{
+  "label": "Nos Offres",
+  "title": "Packs Artistes",
+  "subtitle": "Choisissez la formule adaptée à votre ambition.",
+  "packs": [
+    {
+      "number": "Pack 1",
+      "name": "L'Essentiel",
+      "subtitle": "La base solide pour un lancement réussi et une visibilité ciblée",
+      "price": "350€",
+      "price_suffix": "HT",
+      "featured": false,
+      "features": [
+        "Promotion Playlisting 1 mois (Spotify, Deezer, Apple Music)",
+        "Ads Pop-up Multi-plateformes (Google, Meta, TikTok)",
+        "DA & Stratégie Social Media"
+      ],
+      "bonus": "1 mois d'abonnement The Artiste offert",
+      "reassurance": "Un interlocuteur dédié vous accompagne de A à Z pour garantir la cohérence de votre lancement"
+    },
+    {
+      "number": "Pack 2",
+      "name": "L'Ascension",
+      "subtitle": "Une force de frappe supérieure pour transformer votre titre en succès",
+      "price": "550€",
+      "price_suffix": "HT",
+      "featured": true,
+      "badge": "Recommandé",
+      "features": [
+        "Playlisting Étendu (réseau élargi de curateurs)",
+        "Double Impact Publicitaire (2 teasers)",
+        "Community Management 1 mois",
+        "Content Design (visuels de résultats)"
+      ],
+      "bonus": "2 mois d'abonnement The Artiste offert",
+      "reassurance": "Plus qu'une prestation, un véritable partenariat : votre équipe vit votre projet à vos côtés pour maximiser chaque opportunité"
+    },
+    {
+      "number": "Pack 3",
+      "name": "L'Explosion",
+      "subtitle": "La stratégie All-Inclusive pour installer votre carrière sur le long terme",
+      "price": "1 500€",
+      "price_suffix": "HT",
+      "featured": false,
+      "features": [
+        "Pitch Éditorial (Focus Track)",
+        "Playlisting Long Terme 3 mois",
+        "YouTube & Google Ads",
+        "Accompagnement VIP 2 mois + WhatsApp dédié",
+        "Relations Presse & Médias 1 mois",
+        "Ads Domination : Teasers en rotation continue sur Meta, TikTok et Google",
+        "SEO Musique : Référencement optimisé sur toutes les plateformes de streaming"
+      ],
+      "bonus": "3 mois d'abonnement The Artiste offert",
+      "reassurance": "Une War Room digitale à votre service : nous pilotons votre succès en temps réel avec une expertise 360°"
+    }
+  ],
+  "custom_offer": {
+    "text": "Vous avez un projet hors-norme ou des besoins spécifiques pour votre entreprise ? Nous construisons votre stratégie à la carte.",
+    "button": "Demander un devis personnalisé"
+  }
+}

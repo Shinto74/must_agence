@@ -1,0 +1,60 @@
+{
+  "label": "Devis personnalisé",
+  "title_line1": "Construisons votre",
+  "title_line2": "stratégie ensemble.",
+  "steps": [
+    {
+      "title": "Votre profil",
+      "question": "Qui êtes-vous ?",
+      "hint": "Choisissez le profil qui vous correspond",
+      "type": "radio",
+      "options": [
+        { "label": "Artiste Indépendant", "icon": "🎤" },
+        { "label": "Label", "icon": "🏷️" },
+        { "label": "Entreprise", "icon": "🏢" }
+      ]
+    },
+    {
+      "title": "Votre projet",
+      "question": "Décrivez votre vision",
+      "hint": "Plus vous êtes précis, plus notre proposition sera pertinente",
+      "type": "textarea",
+      "placeholder": "Décrivez votre projet, vos objectifs, votre univers..."
+    },
+    {
+      "title": "Votre budget",
+      "question": "Votre budget indicatif",
+      "hint": "Aucun engagement — cela nous aide à calibrer notre proposition",
+      "type": "radio",
+      "options": [
+        { "label": "Moins de 1k€", "icon": "💰" },
+        { "label": "1k€ — 3k€", "icon": "💰" },
+        { "label": "3k€ — 5k€", "icon": "💰" },
+        { "label": "+5k€", "icon": "💰" }
+      ]
+    },
+    {
+      "title": "Votre échéance",
+      "question": "Votre échéance",
+      "hint": "Quand souhaitez-vous lancer ?",
+      "type": "date"
+    },
+    {
+      "title": "Vos attentes",
+      "question": "Qu'attendez-vous de nous ?",
+      "hint": "Sélectionnez tout ce qui vous intéresse",
+      "type": "checkbox",
+      "options": [
+        { "label": "Notoriété" },
+        { "label": "Ventes" },
+        { "label": "Image de marque" },
+        { "label": "Accompagnement humain" }
+      ]
+    }
+  ],
+  "success_title": "Demande envoyée !",
+  "success_text": "Notre équipe vous recontacte dans les 24h.",
+  "button_prev": "Précédent",
+  "button_next": "Suivant",
+  "button_submit": "Envoyer ma demande"
+}

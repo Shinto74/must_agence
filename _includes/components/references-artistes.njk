@@ -1,0 +1,24 @@
+{# References Artistes — V3: auto-scroll + onglets séparés + dot indicator #}
+<section class="ref-art" data-cms-edit="references_artistes">
+  <div class="ctn">
+    <div class="rv"><div class="sl-t">{{ references_artistes.label }}</div>
+    <h2 class="sh">{{ references_artistes.title_line1 }}<br>{{ references_artistes.title_line2 }}</h2></div>
+    <div class="cat-tabs" id="catTabs">
+      {%- for cat in references_artistes.categories %}
+      <div class="cat-tab{% if loop.first %} active{% endif %}" data-cat="{{ cat.slug }}">{{ cat.name }}</div>
+      {%- endfor %}
+    </div>
+  </div>
+  <div class="scroll-wrap" id="artWrap">
+    <div class="scroll-track" id="artTrack">
+      {%- for cat in references_artistes.categories %}
+        {%- for artist in cat.artists %}
+      <div class="art-card" data-cat="{{ cat.slug }}" data-cms-edit="references_artistes.categories[{{ loop.parent.loop.index0 }}].artists[{{ loop.index0 }}]">
+        <img src="{{ artist.image }}" alt="{{ artist.name }}" loading="lazy">
+        <div class="ai"><div class="an">{{ artist.name }}</div><div class="at">{{ cat.name }}</div></div>
+      </div>
+        {%- endfor %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>

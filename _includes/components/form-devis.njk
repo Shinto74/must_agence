@@ -1,0 +1,53 @@
+{# Formulaire Devis — Variante B: Wizard Cards multi-étapes #}
+<section class="fb" id="ct-devis" style="background:var(--sf)" data-cms-edit="form_devis">
+  <div class="ctn">
+    <div class="rv"><div class="sl-t">{{ form_devis.label }}</div>
+    <h2 class="sh">{{ form_devis.title_line1 }}<br>{{ form_devis.title_line2 }}</h2></div>
+    <div class="wizard" id="wizB">
+      <div class="step-bar" id="wizBBar">
+        {%- for step in form_devis.steps %}
+        <div class="step-seg{% if loop.first %} on{% endif %}"></div>
+        {%- endfor %}
+      </div>
+      <div class="step-info">
+        <div class="step-count">Étape <span id="wizBCur">1</span> / {{ form_devis.steps | length }}</div>
+        <div class="step-title" id="wizBTitle">{{ form_devis.steps[0].title }}</div>
+      </div>
+      <div class="wiz-panel">
+        {%- for step in form_devis.steps %}
+        <div class="wiz-slide{% if loop.first %} on{% endif %}" data-step="{{ loop.index0 }}">
+          <div class="wiz-q">{{ step.question }}</div>
+          <div class="wiz-hint">{{ step.hint }}</div>
+          {%- if step.type == "radio" %}
+          <div class="opt-grid{% if step.options | length == 4 %} col4{% endif %}">
+            {%- for opt in step.options %}
+            <div class="og"><input type="radio" name="wiz_s{{ loop.parent.loop.index0 }}" id="wiz_{{ loop.parent.loop.index0 }}_{{ loop.index0 }}"><label for="wiz_{{ loop.parent.loop.index0 }}_{{ loop.index0 }}">{%- if opt.icon %}<span class="ico">{{ opt.icon }}</span>{%- endif %}{{ opt.label }}</label></div>
+            {%- endfor %}
+          </div>
+          {%- endif %}
+          {%- if step.type == "textarea" %}
+          <textarea class="wiz-textarea" placeholder="{{ step.placeholder }}"></textarea>
+          {%- endif %}
+          {%- if step.type == "date" %}
+          <input type="date" class="wiz-input">
+          {%- endif %}
+          {%- if step.type == "checkbox" %}
+          <div class="chk-grid">
+            {%- for opt in step.options %}
+            <div class="cg"><input type="checkbox" id="wizchk_{{ loop.parent.loop.index0 }}_{{ loop.index0 }}"><label for="wizchk_{{ loop.parent.loop.index0 }}_{{ loop.index0 }}"><span class="bx"></span>{{ opt.label }}</label></div>
+            {%- endfor %}
+          </div>
+          {%- endif %}
+        </div>
+        {%- endfor %}
+        <div class="wiz-slide" data-step="{{ form_devis.steps | length }}">
+          <div class="wiz-success"><div class="check-big"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><h3>{{ form_devis.success_title }}</h3><p>{{ form_devis.success_text }}</p></div>
+        </div>
+      </div>
+      <div class="wiz-footer" id="wizBFoot">
+        <button class="btn-wiz" id="wizBPrev" onclick="wizNav(-1)" disabled>{{ form_devis.button_prev }}</button>
+        <button class="btn-wiz primary" id="wizBNext" onclick="wizNav(1)">{{ form_devis.button_next }}</button>
+      </div>
+    </div>
+  </div>
+</section>

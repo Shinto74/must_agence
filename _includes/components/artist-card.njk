@@ -1,0 +1,5 @@
+{# Artist card — expects: artist (object from artistes.json) #}
+<div class="art-card rv" data-cms-edit="artistes[{{ loop.index0 }}]">
+  <img src="{{ artist.image }}" alt="{{ artist.name }}" loading="lazy">
+  <div class="art-name">{{ artist.name }}</div>
+</div>

@@ -2,8 +2,8 @@
   "name": "Must Agence",
   "tagline": "Influence Agency",
   "description": "Agence d'influence spécialisée musique et marques. Campagnes TikTok, stratégie sociale et développement artiste.",
-  "logo_green": "https://cdn.prod.website-files.com/6707d9b9b2069c15b6884fe1/69c3af8ef6331b5a64e1ea39_WhatsApp%20Image%202026-03-24%20at%2019.55.28.jpeg",
-  "logo_white": "https://cdn.prod.website-files.com/6707d9b9b2069c15b6884fe1/69c3af8eba66e7d89202505b_WhatsApp%20Image%202026-03-24%20at%2019.55.28%20(1).jpeg",
+  "logo_green": "/src/assets/images/logos/logo_vert.png",
+  "logo_white": "/src/assets/images/logos/logo_blanc.png",
   "nav_links": [
     { "label": "Pôle Artiste", "page": "artiste" },
     { "label": "Pôle Entreprise", "page": "entreprise" },
@@ -23,14 +23,12 @@
   "marquee_words": ["Influence", "TikTok", "Musique", "Branding", "Growth", "Ads", "Contenu", "Stratégie"],
   "poles": {
     "artiste": {
-      "logo": "white",
       "tag": "Music & Entertainment",
       "title": "Pôle Artiste",
       "description": "Campagnes d'influence, activation TikTok, stratégie de lancement et développement de carrière. On transforme les talents en icônes.",
       "chips": ["TikTok", "Influence", "Lancement", "Brand Content", "Booking"]
     },
     "entreprise": {
-      "logo": "green",
       "tag": "Corporate & Business",
       "title": "Pôle Entreprise",
       "description": "Marketing d'influence, growth hacking, social media et production de contenu. On transforme votre budget en résultats.",
@@ -44,7 +42,6 @@
     "quote": "\"Dans un monde de bruit, nous créons le signal. Nous ne cherchons pas des influenceurs, nous bâtissons des marques durables.\"",
     "text": "L'algorithme n'est pas une loterie, c'est une science. On capture l'attention là où elle est la plus chère, on transforme la hype en business model pérenne, et on construit des empires digitaux."
   },
-  "clients": ["Universal Music", "Nike", "Deezer", "Lancôme", "Sony Music", "Red Bull", "Spotify", "Puma", "Warner", "Samsung", "McDonald's", "Saint Laurent"],
   "cases": [
     {
       "icon": "🎵",
@@ -109,7 +106,7 @@
       { "label": "LinkedIn", "url": "#" },
       { "label": "TikTok", "url": "#" }
     ],
-    "copyright": "© 2026 — Tous droits réservés.",
+    "copyright": "© 2026 Must Agence — Tous droits réservés.",
     "tagline": "Fait avec précision."
   }
 }
